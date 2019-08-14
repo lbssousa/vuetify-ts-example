@@ -78,6 +78,8 @@
           >
             {{ eco.text }}
           </a>
+
+          <p>Current breakpoint: {{ currentBreakpoint }}</p>
         </v-layout>
       </v-flex>
     </v-layout>
@@ -139,6 +141,11 @@ export default Vue.extend({
         href: 'https://vuetifyjs.com/getting-started/frequently-asked-questions'
       }
     ]
-  })
+  }),
+  computed: {
+    currentBreakpoint (): string {
+      return this.$vuetify.breakpoint.name
+    }
+  }
 })
 </script>
